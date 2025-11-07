@@ -1,0 +1,14 @@
+{
+  "clubs": [
+    {
+      "name": "Tech Club",
+      "about": "Focused on coding, hackathons, and AI innovation.",
+      "next_event": "Hackathon 2025 - March 15"
+    },
+    {
+      "name": "Art Club",
+      "about": "Creative hub for art, music, and performance.",
+      "next_event": "Cultural Fest - April 10"
+    }
+  ]
+}

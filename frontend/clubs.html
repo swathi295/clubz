@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>CLUBz | Explore Clubs</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+body {
+  font-family:'Poppins',sans-serif;
+  background:#f8f9fb;
+  color:#292D3E;
+  margin:0;
+}
+
+/* Navbar */
+.navbar {
+  background:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.05);
+  position:sticky;top:0;z-index:100;
+}
+.navbar .logo {
+  font-weight:700;font-size:20px;color:#292D3E;
+}
+.navbar .logo::before{content:"● ";color:#F0AD4E;}
+.navbar ul {
+  list-style:none;display:flex;gap:25px;margin:0;
+}
+.navbar ul li a {
+  text-decoration:none;color:#000;font-weight:500;transition:.3s;
+}
+.navbar ul li a:hover,
+.navbar ul li a.active {color:#292D3E;font-weight:700;}
+
+/* Hero Header */
+.hero {
+  background:#292D3E;
+  color:#fff;
+  text-align:center;
+  padding:80px 20px;
+}
+.hero h1 {
+  font-size:42px;
+  margin-bottom:10px;
+}
+.hero p {
+  font-size:18px;
+  color:#e0e0e0;
+}
+
+/* Club Cards */
+.clubs-section {
+  padding:60px 80px;
+}
+.clubs-grid {
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  justify-content:center;
+}
+.club-card {
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+  width:300px;
+  overflow:hidden;
+  transition:0.3s;
+}
+.club-card:hover {
+  transform:translateY(-6px);
+}
+.club-card img {
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+.club-card .info {
+  padding:20px;
+}
+.club-card h3 {
+  color:#292D3E;
+  margin-bottom:10px;
+}
+.club-card p {
+  color:#6b7280;
+  font-size:14px;
+  margin-bottom:15px;
+}
+.btn {
+  background:#F0AD4E;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  padding:10px 16px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+}
+.btn:hover {background:#d99732;}
+footer {
+  background:#292D3E;color:#fff;
+  text-align:center;padding:20px;
+  font-size:14px;margin-top:40px;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">CLUBz</div>
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="clubs.html" class="active">Clubs</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <h1>Explore Our College Clubs</h1>
+  <p>Join, connect, and grow through our vibrant club communities.</p>
+</section>
+
+<section class="clubs-section">
+  <div class="clubs-grid">
+
+    <div class="club-card">
+      <img src="assets/image.png" alt="Yuva Club">
+      <div class="info">
+        <h3>Yuva Club</h3>
+        <p>Dedicated to coding, innovation, and emerging technologies. Organizes hackathons, coding challenges, and tech talks.</p>
+        <a href="register.html" class="btn">Join Now</a>
+      </div>
+    </div>
+
+    <div class="club-card">
+      <img src="assets/gdg.jpg" alt="Art Club">
+      <div class="info">
+        <h3>Google Developer Groups </h3>
+        <p>Promotes creativity through painting, music, dance, and theatre. Celebrates diversity and artistic expression.</p>
+        <a href="register.html" class="btn">Join Now</a>
+      </div>
+    </div>
+
+    <div class="club-card">
+      <img src="assets/roteact.rec.jpg" alt="Sports Club">
+      <div class="info">
+        <h3>Rotaract Club</h3>
+        <p>Encourages physical fitness and teamwork through tournaments, marathons, and sports training events.</p>
+        <a href="register.html" class="btn">Join Now</a>
+      </div>
+    </div>
+
+    <div class="club-card">
+      <img src="assets/literature.jpg" alt="Literature Club">
+      <div class="info">
+        <h3>Literature Club</h3>
+        <p>For those passionate about reading, writing, and poetry. Hosts book talks, writing contests, and debates.</p>
+        <a href="register.html" class="btn">Join Now</a>
+      </div>
+    </div>
+
+    <div class="club-card">
+      <img src="assets/socialclub.jpg" alt="Social Service Club">
+      <div class="info">
+        <h3>Social Service Club</h3>
+        <p>Focuses on community welfare, environmental awareness, and volunteering for social causes.</p>
+        <a href="register.html" class="btn">Join Now</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>© 2025 CLUBz | Explore, Connect, Lead</footer>
+</body>
+</html>

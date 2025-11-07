@@ -1,0 +1,5 @@
+{
+  "platform": { "apiRuntime": "node:18" },
+  "navigationFallback": { "rewrite": "/home.html" },
+  "mimeTypes": { ".json": "text/json" }
+}

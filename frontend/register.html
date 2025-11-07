@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>CLUBz | Event Registration</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+body {
+  font-family:'Poppins',sans-serif;
+  background:#f8f9fb;
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+  color:#292D3E;
+}
+.form-container {
+  background:#fff;
+  padding:40px 30px;
+  border-radius:16px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  width:380px;
+  text-align:center;
+}
+h2 {
+  margin-bottom:10px;
+  color:#292D3E;
+}
+p {
+  color:#6b7280;
+  margin-bottom:25px;
+}
+input, select {
+  width:100%;
+  padding:10px 14px;
+  margin:8px 0;
+  border:1px solid #ddd;
+  border-radius:8px;
+  font-family:inherit;
+  font-size:14px;
+}
+button {
+  background:#F0AD4E;
+  border:none;
+  color:#fff;
+  padding:10px 18px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  width:100%;
+  margin-top:15px;
+}
+button:hover { background:#d99732; }
+a {
+  text-decoration:none;
+  color:#292D3E;
+  font-size:13px;
+}
+a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+<div class="form-container">
+  <h2>Event Registration</h2>
+  <p>Fill in your details to register for the event.</p>
+  <form onsubmit="register(event)">
+    <input type="text" id="name" placeholder="Full Name" required/>
+    <input type="email" id="email" placeholder="Email" required/>
+    <input type="text" id="roll" placeholder="Student Roll No" required/>
+    <select id="event" required>
+      <option value="">Select club</option>
+      <option value="hackathon">yuva club</option>
+      <option value="seminar">roteact</option>
+      <option value="artfest">GDG</option>
+    </select>
+    <button type="submit">Submit Registration</button>
+  </form>
+  <a href="student.html">← Back to Dashboard</a>
+</div>
+
+<script>
+function register(e) {
+  e.preventDefault();
+  alert("Registration successful! 🎉");
+  window.location.href = "student.html";
+}
+</script>
+</body>
+</html>

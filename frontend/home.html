@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>CLUBz | REC Clubs Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+    body {
+      font-family:'Poppins',sans-serif;
+      color:#292D3E;
+      background:#f8f9fb;
+    }
+
+    /* Navbar */
+    .navbar {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 60px;
+      background:#fff;
+      position:sticky;
+      top:0;
+      z-index:100;
+      box-shadow:0 2px 8px rgba(0,0,0,0.05);
+    }
+    .navbar .logo {
+      font-weight:700;
+      font-size:20px;
+      color:#292D3E;
+    }
+    .navbar .logo::before {
+      content:"● ";
+      color:#F0AD4E;
+    }
+    .navbar ul {
+      list-style:none;
+      display:flex;
+      gap:25px;
+    }
+    .navbar ul li a {
+      text-decoration:none;
+      color:#000;
+      font-weight:500;
+      transition:.3s;
+    }
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      color:#292D3E;
+      font-weight:700;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('assets/hero-bg.png') center center / cover no-repeat;
+      height: 85vh;
+      color: #fff;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 80px;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(41,45,62,0.6); /* dark overlay for readability */
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+    .hero-content h1 {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero-content p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #f0f0f0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn-primary {
+      background: #F0AD4E;
+      color: #fff;
+      margin-right: 10px;
+    }
+    .btn-primary:hover {
+      background: #d99732;
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid #fff;
+      color: #fff;
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #292D3E;
+      color: #fff;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<script src="chatbot.js"></script>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">CLUBz</div>
+  <ul>
+    <li><a href="home.html" class="active">Home</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>RAJALAKSHMI ENGINEERING COLEGE<br>Your Club Journey Starts Here!</h1>
+    <p>One portal for all student clubs and events. Hosted with Azure Static Web Apps & Blob Storage.</p>
+    <a href="clubs.html" class="btn btn-primary">Explore Clubs</a>
+    <a href="login.html" class="btn btn-secondary">Login</a>
+  </div>
+</section>
+
+<footer>
+  © 2025 CLUBz | Built with ❤️ using Azure
+</footer>
+
+</body>
+</html>
+

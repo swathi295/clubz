@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>CLUBz | Student Dashboard</title>
+<title>CLUBz | Upcoming Events</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 body {
@@ -27,27 +27,27 @@ body {
   font-weight:500;
 }
 .navbar a:hover { color:#F0AD4E; }
-.dashboard {
+header {
   text-align:center;
-  margin-top:50px;
+  padding:40px 20px;
 }
-.dashboard h1 { font-size:32px; margin-bottom:8px; }
-.dashboard p { color:#6b7280; margin-bottom:40px; }
-.cards {
-  display:flex; flex-wrap:wrap;
-  justify-content:center; gap:24px;
+header h1 { font-size:32px; }
+.events-container {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+  padding:40px;
 }
 .card {
   background:#fff;
   border-radius:16px;
   box-shadow:0 8px 25px rgba(0,0,0,.08);
-  width:280px;
-  padding:28px 20px;
+  padding:20px;
   transition:.2s;
 }
 .card:hover { transform:translateY(-5px); }
-.card h3 { color:#292D3E; font-size:18px; margin-bottom:6px; }
-.card p { color:#6b7280; font-size:14px; margin-bottom:20px; }
+.card h3 { color:#292D3E; font-size:18px; margin-bottom:8px; }
+.card p { color:#6b7280; font-size:14px; margin-bottom:10px; }
 button {
   background:#F0AD4E;
   border:none;
@@ -64,7 +64,7 @@ footer {
   padding:14px;
   text-align:center;
   border-radius:12px 12px 0 0;
-  margin-top:50px;
+  margin-top:40px;
 }
 </style>
 </head>
@@ -74,34 +74,23 @@ footer {
   <div><strong>CLUBz</strong></div>
   <div>
     <a href="student.html">Home</a>
-    <a href="events.html">Events</a>
+    <a href="events.html" class="active">Events</a>
     <a href="activities.html">My Activities</a>
     <a href="profile.html">Profile</a>
   </div>
 </nav>
 
-<section class="dashboard">
-  <h1>Welcome, Student 👋</h1>
-  <p>Your personalized dashboard for club activities and events.</p>
-  <div class="cards">
-    <div class="card">
-      <h3>Upcoming Events</h3>
-      <p>View and register for upcoming college events.</p>
-      <button onclick="location.href='events.html'">View Events</button>
-    </div>
-    <div class="card">
-      <h3>My Submissions</h3>
-      <p>Track your submissions and certificates.</p>
-      <button onclick="location.href='submissions.html'">View Submissions</button>
-    </div>
-    <div class="card">
-      <h3>Clubs Joined</h3>
-      <p>See the list of clubs you're part of.</p>
-      <button onclick="location.href='clubs.html'">View Clubs</button>
-    </div>
-  </div>
+<header>
+  <h1>Upcoming Events 🎉</h1>
+  <p>Explore all upcoming club events and register to join!</p>
+</header>
+
+<section class="events-container" id="eventsContainer">
+  <p style="text-align:center;width:100%;">Loading events from Azure...</p>
 </section>
+
 <footer>© 2025 CLUBz | Student Portal</footer>
+<script src="events.js"></script>
+<script src="chatbot.js"></script>
 </body>
 </html>
-

@@ -1,38 +1,12 @@
-const { BlobServiceClient } = require("@azure/storage-blob");
+import { v4 as uuid } from "uuid";
+import { writeEvent } from "../shared/storage.js";
 
-module.exports = async function (context, req) {
-  const blobConnection = process.env.AZURE_STORAGE_CONNECTION_STRING;
-  const containerName = "clubdata";
-  const blobName = "events.json";
-  const newEvent = req.body;
-
-  try {
-    const blobService = BlobServiceClient.fromConnectionString(blobConnection);
-    const container = blobService.getContainerClient(containerName);
-    const blob = container.getBlockBlobClient(blobName);
-
-    // read existing data
-    let data = { clubs: [] };
-    try {
-      const dl = await blob.downloadToBuffer();
-      data = JSON.parse(dl.toString());
-    } catch (e) {
-      context.log("Creating new events.json file...");
-    }
-
-    data.clubs.push(newEvent);
-
-    await blob.upload(JSON.stringify(data, null, 2), Buffer.byteLength(JSON.stringify(data)), { overwrite: true });
-
-    context.res = {
-      status: 200,
-      body: { message: "✅ Event successfully added!" },
-    };
-  } catch (err) {
-    context.log("Error:", err.message);
-    context.res = {
-      status: 500,
-      body: { error: err.message },
-    };
-  }
-};
+export default async function (context, req) {
+  if (req.method !== 'POST') { context.res = { status: 405, body:{message:'Method not allowed'} }; return; }
+  const { token, title, club, date, location, description } = req.body || {};
+  if (!token || token !== process.env.ADMIN_TOKEN) { context.res = { status: 401, body:{message:'Unauthorized'} }; return; }
+  if (!title || !club || !date || !location || !description) { context.res = { status:400, body:{message:'Missing fields'} }; return; }
+  const event = { id: uuid(), title, club, date, location, description, createdAt: new Date().toISOString() };
+  await writeEvent(event);
+  context.res = { status: 200, body: { message:'Event created', id:event.id } };
+}
